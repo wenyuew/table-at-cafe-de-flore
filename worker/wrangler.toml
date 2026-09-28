@@ -1,0 +1,19 @@
+name = "cafe-de-flore"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# The website allowed to use this proxy (comma-separated for more than one).
+ALLOWED_ORIGINS = "https://wenyuew.github.io"
+MODEL = "claude-sonnet-5"
+DAILY_LIMIT_PER_VISITOR = "40"
+DAILY_LIMIT_TOTAL = "800"
+
+# Daily usage counters. Create with:  npx wrangler kv namespace create RATE
+# then paste the id it prints below.
+[[kv_namespaces]]
+binding = "RATE"
+id = "PASTE_KV_ID_HERE"
+
+# The API key is NOT stored here. Set it as a secret:
+#   npx wrangler secret put ANTHROPIC_API_KEY
